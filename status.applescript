@@ -15,7 +15,7 @@ repeat
   
   if (camerastatus is not equal to status) then
     set camerastatus to status
-    set postURLCommand to postCurlStart & status & postCurlEnd & key
+    set postURLCommand to postCurlStart & status & postCurlEnd & postKey
     do shell script postURLCommand
   end if
   
