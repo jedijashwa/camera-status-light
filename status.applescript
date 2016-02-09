@@ -18,8 +18,5 @@ repeat
     set postURLCommand to postCurlStart & status & postCurlEnd & postKey
     do shell script postURLCommand
   end if
-  
-  --  tell application "Messages"
-  --    send (theContent as string) to buddy "4157671641" of service "SMS"
-  --  end tell
+
 end repeat
