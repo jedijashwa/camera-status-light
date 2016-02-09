@@ -23,3 +23,7 @@ tell application "Mail"
     
   end tell
 end tell
+
+tell application "Messages"
+  send (theContent as string) to buddy MYPHONENUMBER of service "SMS"
+end tell
