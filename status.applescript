@@ -1,4 +1,4 @@
-set camerastatus to "camera_off"
+set camerastatus to "initialize"
 set postCurlStart to "curl -X POST maker.ifttt.com/trigger/"
 set postCurlEnd to "/with/key/"
 set postKey to 
