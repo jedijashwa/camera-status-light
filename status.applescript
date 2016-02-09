@@ -23,10 +23,11 @@ repeat
   end if
     
   if (camerastatus is not equal to status) then
+    log status
     set camerastatus to status
     set postURLCommand to postCurlStart & status & postCurlEnd & postKey
     do shell script postURLCommand
   end if
 
-  delay 0.2
+  delay 2
 end repeat
