@@ -9,9 +9,7 @@ repeat
   else
     set status to "camera_on"
   end if
-  
-  set theContent to status
-  
+    
   if (camerastatus is not equal to status) then
     set camerastatus to status
     set postURLCommand to postCurlStart & status & postCurlEnd & postKey
