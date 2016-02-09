@@ -4,26 +4,8 @@ else
   set status to "camera on"
 end if
 
-set recipientName to "Josh"
-set recipientAddress to "josh.riesenbach@gmail.com"
-set theSubject to "Your camera's status"
 set theContent to status
 
-tell application "Mail"
-  
-  --Create the message
-  set theMessage to make new outgoing message with properties {subject:theSubject, content:theContent, visible:true}
-  
-  --Set a recipient
-  tell theMessage
-    make new to recipient with properties {name:recipientName, address:recipientAddress}
-    
-    --Send the Message
-    send
-    
-  end tell
-end tell
-
 tell application "Messages"
-  send (theContent as string) to buddy MYPHONENUMBER of service "SMS"
+  send (theContent as string) to buddy "4157671641" of service "SMS"
 end tell
