@@ -1,13 +1,24 @@
 set camerastatus to "initialize"
 set postCurlStart to "curl -X POST maker.ifttt.com/trigger/"
 set postCurlEnd to "/with/key/"
-set postKey to 
+set postKey to "b1pnZ32izPP3ISZqRMlV0H"
 
 repeat
-  if (((do shell script "ioreg -l | grep 0x100097f1a | awk '{print $23}'") as string) is equal to "6>") then
-    set status to "camera_off"
-  else
+  set input to (do shell script "ioreg -l")
+
+  set text item delimiters to "FaceTime HD"
+  set input to (text item 2 of input)
+  set text item delimiters to "IOPowerManagement"
+  set input to (text item 2 of input)
+  set text item delimiters to "="
+  set input to (text item 3 of input)
+  set text item delimiters to ","
+  set input to (text item 1 of input)
+
+  if (input is equal to "yes") then
     set status to "camera_on"
+  else
+    set status to "camera_off"
   end if
     
   if (camerastatus is not equal to status) then
