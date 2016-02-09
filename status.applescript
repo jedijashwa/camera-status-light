@@ -18,4 +18,5 @@ repeat
     do shell script postURLCommand
   end if
 
+  delay 0.2
 end repeat
