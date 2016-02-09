@@ -1,4 +1,7 @@
 set camerastatus to "camera_off"
+set postCurlStart to "curl -X POST maker.ifttt.com/trigger/"
+set postCurlEnd to "/with/key/"
+set postKey to 
 
 repeat
   delay 1
@@ -12,8 +15,8 @@ repeat
   
   if (camerastatus is not equal to status) then
     set camerastatus to status
-    set postURL to "curl -X POST maker.ifttt.com/trigger/" & status & "/with/key/KEY"
-    do shell script postURL
+    set postURLCommand to postCurlStart & status & postCurlEnd & key
+    do shell script postURLCommand
   end if
   
   --  tell application "Messages"
